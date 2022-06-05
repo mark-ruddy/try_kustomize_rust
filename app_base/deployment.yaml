@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-printer
+  labels:
+    name: random-printer
+spec:
+  replicas: 3
+  # selector labels for pods, must match the pods template labels
+  selector:
+    matchLabels:
+      app: random-printer
+  template:
+    metadata:
+      labels:
+        app: random-printer
+    spec:
+      containers:
+        - name: random-printer
+          image: localhost:5000/random_printer

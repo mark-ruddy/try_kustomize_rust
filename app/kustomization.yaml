@@ -1,0 +1,13 @@
+namePrefix: dev-
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  variant: dev
+commonAnnotations:
+  note: Hello, I am development!
+resources:
+  - ../app_base
+patches:
+  - path: replica_count.yaml
+    target:
+      namespace: default
