@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Deployment
 metadata:
+  # Kustomize knows which base resource to overlay because the kind: Deployment matches and the metadata matches
   name: random-printer
 spec:
   replicas: 2
